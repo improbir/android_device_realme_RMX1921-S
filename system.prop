@@ -137,6 +137,7 @@ persist.vendor.radio.sib16_support=1
 persist.radio.atfwd.start=true 
 persist.vendor.radio.lte_vrte_ltd=1 
 persist.vendor.radio.cs_srv_type=1 
+persist.vendor.radio.add_power_save=1
 persist.radio.VT_ENABLE=1 
 persist.radio.volte.dan_support=true 
 persist.data.iwlan=1 
