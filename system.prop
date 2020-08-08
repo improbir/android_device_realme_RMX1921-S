@@ -54,6 +54,7 @@ ro.lcd.display.screen.underlightsensor.region=624,28,672,76
 ro.display.underscreen.lightsensor.screenshot.period=50
 persist.debug.wfd.enable=1
 ro.oppo.screen.heteromorphism=444,0:636,76
+debug.performance.tuning=1
 
 # Dex
 dalvik.vm.dex2oat64.enabled=true
