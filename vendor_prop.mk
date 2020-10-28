@@ -190,3 +190,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.usb.rmnet.func.name=rmnet_bam \
     vendor.usb.rmnet.inst.name=rmnet \
     vendor.usb.rndis.func.name=rndis_bam
+
+# Zygote
+PRODUCT_PROPERTY_OVERRIDES += \
+    zygote.critical_window.minute=10
