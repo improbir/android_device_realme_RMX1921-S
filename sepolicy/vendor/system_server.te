@@ -1,12 +1,10 @@
 get_prop(system_server, vendor_default_prop);
 
-allow system_server sysfs:file { getattr open read write };
-allow system_server vendor_file:file { open read };
-
 allow system_server vendor_persist_camera_prop:file { open read getattr };
 allow system_server vendor_default_prop:file { read open getattr };
 allow system_server vendor_camera_prop:file { map read open getattr };
 
+allow system_server sysfs_battery_supply:file { getattr open read write };
 allow system_server dcs_hwservice:hwservice_manager { add find };
 
 
@@ -37,4 +35,12 @@ get_prop(system_server, vendor_camera_prop)
 get_prop(system_server, vendor_persist_camera_prop)
 allow system_server default_android_hwservice:hwservice_manager find;
 allow system_server vendor_file:file { getattr open read write };
+
+allow system_server media_rw_data_file:file { unlink };
+allow system_server sysfs_rtc:file { open read };
+dontaudit system_server default_android_hwservice:hwservice_manager find;
+allow system_server app_zygote:process { getpgid };
+allow system_server proc_devinfo:dir { search };
+allow system_server proc_touchpanel:dir { search };
+allow system_server proc_oppoversion:dir { search };
 

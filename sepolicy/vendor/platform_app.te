@@ -1,5 +1,5 @@
-allow platform_app time_daemon:unix_stream_socket connectto;
-allow platform_app vendor_file:file { execute read };
+allow platform_app sysfs_graphics:dir search;
+allow platform_app sysfs_graphics:file { getattr open read };
 
 get_prop(platform_app, vendor_default_prop);
 get_prop(platform_app, oppo_debug_prop);
@@ -53,3 +53,4 @@ allow platform_app vendor_wigig_prop:file { getattr open };
 allow platform_app vendor_xlat_prop:file { getattr open };
 allow platform_app virtual_ab_prop:file { getattr open };
 
+allow platform_app hal_power_service:service_manager find;
