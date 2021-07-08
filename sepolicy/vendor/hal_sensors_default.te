@@ -9,3 +9,7 @@ get_prop(hal_sensors_default, sensors_prop)
 userdebug_or_eng(`
   get_prop(hal_sensors_default, sensors_dbg_prop)
 ')
+
+allow hal_sensors_default proc_touchpanel:file write;
+allow hal_sensors_default diag_device:chr_file rw_file_perms;
+

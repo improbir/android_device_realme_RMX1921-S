@@ -1,2 +1,3 @@
-allow netmgrd diag_device:chr_file { read write };
 allow netmgrd mnt_vendor_file:dir { getattr search };
+allow netmgrd diag_device:chr_file rw_file_perms;
+

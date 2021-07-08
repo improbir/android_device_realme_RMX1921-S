@@ -54,3 +54,4 @@ allow platform_app vendor_xlat_prop:file { getattr open };
 allow platform_app virtual_ab_prop:file { getattr open };
 
 allow platform_app hal_power_service:service_manager find;
+allow platform_app sensors_prop:file read;
