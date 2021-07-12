@@ -62,3 +62,6 @@ allow init self:capability2 wake_alarm;
 allow init sysfs_kcal:file w_file_perms;
 
 
+allow init sysfs_battery_supply:file setattr;
+allow init adsprpcd_file:file mounton;
+

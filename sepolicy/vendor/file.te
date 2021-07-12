@@ -29,3 +29,6 @@ type sysfs_egain, sysfs_type, fs_type;
 type sysfs_hgain, sysfs_type, fs_type;
 type sysfs_mgain, sysfs_type, fs_type;
 
+# GCam
+type public_adsprpcd_file, file_type;
+
