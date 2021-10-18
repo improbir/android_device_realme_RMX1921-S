@@ -1,8 +1,5 @@
 /*
- * Copyright (C) 2014, 2017-2018 The  Linux Foundation. All rights reserved.
- * Not a contribution
- * Copyright (C) 2008 The Android Open Source Project
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright (C) 2018-2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,91 +14,79 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "LightsService"
-
 #include "Light.h"
-#include <android-base/logging.h>
-#include <android-base/stringprintf.h>
-#include <fstream>
 
+#include <android-base/file.h>
+#include <android-base/logging.h>
+#include <fcntl.h>
+
+using ::android::base::WriteStringToFile;
+
+namespace aidl {
 namespace android {
 namespace hardware {
 namespace light {
-namespace V2_0 {
-namespace implementation {
 
-/*
- * Write value to path and close file.
- */
-template <typename T>
-static void set(const std::string& path, const T& value) {
-    std::ofstream file(path);
-    file << value;
-}
+static const std::string kLCDFile = "/sys/class/backlight/panel0-backlight/brightness";
 
-template <typename T>
-static T get(const std::string& path, const T& def) {
-    std::ifstream file(path);
-    T result;
+#define AutoHwLight(light) {.id = (int)light, .type = light, .ordinal = 0}
+#define MAX_LCD_BRIGHTNESS    1023
 
-    file >> result;
-    return file.fail() ? def : result;
-}
+// List of supported lights
+const static std::vector<HwLight> kAvailableLights = {
+    AutoHwLight(LightType::BACKLIGHT),
+};
 
-static int rgbToBrightness(const LightState& state) {
-    int color = state.color & 0x00ffffff;
-    return ((77 * ((color >> 16) & 0x00ff))
-            + (150 * ((color >> 8) & 0x00ff))
-            + (29 * (color & 0x00ff))) >> 8;
-}
-
-Light::Light() {
-    mLights.emplace(Type::BACKLIGHT, std::bind(&Light::handleBacklight, this, std::placeholders::_1));
-}
-
-void Light::handleBacklight(const LightState& state) {
-    int maxBrightness = get("/sys/class/backlight/panel0-backlight/max_brightness", -1);
-    if (maxBrightness < 0) {
-        maxBrightness = 255;
+// AIDL methods
+ndk::ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
+    switch (id) {
+        case (int)LightType::BACKLIGHT:
+            WriteToFile(kLCDFile, RgbaToBrightness(state.color));
+            break;
     }
-    int sentBrightness = rgbToBrightness(state);
-    int brightness = sentBrightness * maxBrightness / 255;
-    LOG(DEBUG) << "Writing backlight brightness " << brightness
-               << " (orig " << sentBrightness << ")";
-    set("/sys/class/backlight/panel0-backlight/brightness", brightness);
+
+    return ndk::ScopedAStatus::ok();
 }
 
-Return<Status> Light::setLight(Type type, const LightState& state) {
-    auto it = mLights.find(type);
-
-    if (it == mLights.end()) {
-        return Status::LIGHT_NOT_SUPPORTED;
+ndk::ScopedAStatus Lights::getLights(std::vector<HwLight>* lights) {
+    for (auto i = kAvailableLights.begin(); i != kAvailableLights.end(); i++) {
+        lights->push_back(*i);
     }
+    return ndk::ScopedAStatus::ok();
+}
+
+uint32_t Lights::RgbaToBrightness(uint32_t color) {
+    // Extract brightness from AARRGGBB.
+    uint32_t alpha = (color >> 24) & 0xFF;
+    uint32_t brightness;
+    // Retrieve each of the RGB colors
+    uint32_t red = (color >> 16) & 0xFF;
+    uint32_t green = (color >> 8) & 0xFF;
+    uint32_t blue = color & 0xFF;
 
     /*
-     * Lock global mutex until light state is updated.
+     * Scale RGB brightness if Alpha brightness is not 0xFF.
      */
-    std::lock_guard<std::mutex> lock(mLock);
-
-    it->second(state);
-
-    return Status::SUCCESS;
-}
-
-Return<void> Light::getSupportedTypes(getSupportedTypes_cb _hidl_cb) {
-    std::vector<Type> types;
-
-    for (auto const& light : mLights) {
-        types.push_back(light.first);
+    if (alpha != 0xFF) {
+        red = red * alpha / 0xFF;
+        green = green * alpha / 0xFF;
+        blue = blue * alpha / 0xFF;
     }
-
-    _hidl_cb(types);
-
-    return Void();
+    brightness=((77 * red + 150 * green + 29 * blue) >> 8);
+    // Scale the value for our panel
+    brightness=((brightness - 1) * (MAX_LCD_BRIGHTNESS - 1) / (0xFF - 1) + 1);
+    // Prevent errors
+    if (brightness>=1024)
+        brightness=1023;
+    return brightness;
 }
 
-}  // namespace implementation
-}  // namespace V2_0
+// Write value to path and close file.
+bool Lights::WriteToFile(const std::string& path, uint32_t content) {
+    return WriteStringToFile(std::to_string(content), path);
+}
+
 }  // namespace light
 }  // namespace hardware
 }  // namespace android
+}  // namespace aidl
