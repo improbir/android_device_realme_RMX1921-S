@@ -468,7 +468,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libwfdaac_proprietary
 
-PRODUCT_BOOT_JARS += \
+# PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # Wifi
