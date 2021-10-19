@@ -415,7 +415,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/qcom-caf/sdm845 \
-    hardware/google/pixel
+    hardware/google/pixel \
+    kernel/realme/sdm710
 
 # Telephony
 PRODUCT_PACKAGES += \
