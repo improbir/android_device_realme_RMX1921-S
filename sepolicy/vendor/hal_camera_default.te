@@ -4,8 +4,14 @@ allow hal_camera_default persist_camera_file:file { setattr create };
 allow hal_camera_default proc:file rw_file_perms;
 
 get_prop(hal_camera_default, vendor_camera_prop);
-set_prop(hal_camera_default, vendor_camera_prop);
+get_prop(hal_camera_default, oppo_debug_prop);
+get_prop(hal_camera_default, radio_prop);
+get_prop(hal_camera_default, apexd_prop);
+get_prop(hal_camera_default, audio_prop);
+
 r_dir_file(hal_camera_default, sysfs_net);
+
+set_prop(hal_camera_default, vendor_camera_prop);
 
 allow hal_camera_default vendor_default_prop:property_service set;
 set_prop(hal_camera_default, vendor_camera_prop)
@@ -114,14 +120,3 @@ allow hal_camera_default system_prop:file { getattr open };
 allow hal_camera_default system_radio_prop:file { getattr open };
 allow hal_camera_default test_boot_reason_prop:file { getattr open };
 allow hal_camera_default traced_enabled_prop:file { getattr open };
-
-allow hal_camera_default proc_oppoversion:dir search;
-allow hal_camera_default proc_meminfo:file { getattr open read };
-allow hal_camera_default proc_oppoversion:file { open read getattr };
-allow hal_camera_default unlabeled:dir { search };
-allow hal_camera_default oppo_debug_prop:file { read open getattr };
-allow hal_camera_default oppo_fingerprint_prop:file { read open getattr };
-allow hal_camera_default default_prop:file { map getattr };
-allow hal_camera_default radio_prop:file { getattr };
-dontaudit hal_camera_default radio_prop:file read;
-

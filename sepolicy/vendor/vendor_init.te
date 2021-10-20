@@ -27,7 +27,6 @@ allow vendor_init wifi_data_file:dir setattr;
 
 allow vendor_init proc_oppoversion:file {read};
 allow vendor_init default_prop:file read;
-allow vendor_init exported2_default_prop:property_service set;
 allow vendor_init persist_debug_prop:file read;
 allow vendor_init proc_touchpanel:file write;
 allow vendor_init freq_prop:property_service set;
