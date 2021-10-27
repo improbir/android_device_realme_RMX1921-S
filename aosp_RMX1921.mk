@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit some common PE stuff
+# Inherit some common stuff
 TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 1080
 
@@ -30,4 +30,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
         PRODUCT_NAME="RMX1921" \
 	TARGET_DEVICE="RMX1921"
     
-
+# Elixir official
+IS_PHONE := true
+CUSTOM_BUILD_TYPE=OFFICIAL
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+TARGET_INCLUDE_STOCK_ACORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
