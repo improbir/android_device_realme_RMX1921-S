@@ -822,16 +822,17 @@ vendor/lib/libllvm-qcom.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libpvr.so
 
-# Graphics (Adreno firmware)
+# Graphics (Adreno firmware) from stock RUI 2 
+vendor/firmware/a612_rgmu.bin
 vendor/firmware/a615_zap.b00
 vendor/firmware/a615_zap.b01
 vendor/firmware/a615_zap.b02
 vendor/firmware/a615_zap.elf
 vendor/firmware/a615_zap.mdt
+vendor/firmware/a618_gmu.bin
 vendor/firmware/a630_gmu.bin
 vendor/firmware/a630_sqe.fw
-vendor/firmware/leia_pfp_470.fw
-vendor/firmware/leia_pm4_470.fw
+vendor/firmware/a640_gmu.bin
 
 # Graphics (Vulkan)
 vendor/lib64/hw/vulkan.sdm710.so
