@@ -697,7 +697,7 @@ vendor/firmware/goodixfp.b05|4b0183125ae385847f298b41069df15a5d9811d5
 vendor/firmware/goodixfp.b06|0d5429550cb59f8ebb8db0239c07dc39dced66a3
 vendor/firmware/goodixfp.b07|1b33a3c20ea4898ba3d4d9b6e85e75818ffb2e84
 
-# GPS
+# GPS from PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_210-release-keys
 -vendor/app/CACertService/CACertService.apk
 vendor/bin/hw/android.hardware.gnss@2.0-service-qti
 vendor/bin/loc_launcher
