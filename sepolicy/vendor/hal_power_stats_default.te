@@ -1,7 +1,4 @@
-typeattribute hal_power_stats_default coredomain;
-
-domain_auto_trans(init, hal_power_stats_default_exec, hal_power_stats_default)
-allow hal_power_stats_default sysfs:dir { open read getattr search };
-
+allow hal_power_stats_default sysfs_iio:dir { open read getattr search };
+allow hal_power_stats_default sysfs_iio:file { open read getattr write };
+allow hal_power_stats_default sysfs_iio:lnk_file { open read getattr write };
 get_prop(hal_power_stats_default, wifi_hal_prop)
-

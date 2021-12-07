@@ -1,6 +1,6 @@
 # Wlan
 vendor.wlan.  u:object_r:vendor_wifi_prop:s0
-wifi.active.interface              u:object_r:exported_wifi_prop:s0
+wifi.active.interface              u:object_r:wifi_hal_prop:s0
 
 # Oppo Audio props
 persist.oppo.mm.pcmdump                 u:object_r:vendor_audio_prop:s0
@@ -11,8 +11,11 @@ sys.oppo.mm.voice.record                u:object_r:vendor_audio_prop:s0
 persist.vendor.fingerprint.             u:object_r:oppo_fingerprint_prop:s0
 oppo.optical.             u:object_r:oppo_fingerprint_prop:s0
 vendor.fingerprint.optical.             u:object_r:oppo_fingerprint_prop:s0
+oppo.fingerprint.gf.package.version             u:object_r:oppo_fingerprint_prop:s0
+ro.separate.soft             u:object_r:oppo_fingerprint_prop:s0
 
 # Camera
+vendor.oppo.camera.                  u:object_r:vendor_camera_prop:s0
 oppo.camera.                  u:object_r:vendor_camera_prop:s0
 persist.front.skipdisplay.enable                  u:object_r:vendor_camera_prop:s0
 persist.aec.manual.mode                  u:object_r:vendor_camera_prop:s0
@@ -38,9 +41,16 @@ ro.sys.reserve.integrate             u:object_r:oppo_debug_prop:s0
 ro.vendor.aware_available             u:object_r:oppo_debug_prop:s0
 sys.build.display.full_id             u:object_r:oppo_debug_prop:s0
 ro.rf_version             u:object_r:oppo_debug_prop:s0
+persist.oppo.nw.region.lock             u:object_r:oppo_debug_prop:s0
+persist.oppo.network.operator             u:object_r:oppo_debug_prop:s0
+oppo.device.imeicache             u:object_r:oppo_debug_prop:s0
+sys.oppo.network.rffeature             u:object_r:oppo_debug_prop:s0
+oppo.fingerprint.factory             u:object_r:oppo_debug_prop:s0
+persist.console.silent.config             u:object_r:oppo_debug_prop:s0
 
 # Oppo wlan prop
 persist.oppo.wlan.            u:object_r:oppo_wlan_prop:s0
+oppo.wifi.            u:object_r:oppo_wlan_prop:s0
 
 # Thermal
 vendor.thermal.config                   u:object_r:vendor_thermal_prop:s0
@@ -52,13 +62,16 @@ audio_hal.in_period_size                        u:object_r:vendor_audio_prop:s0
 audio_hal.period_multiplier                     u:object_r:vendor_audio_prop:s0
 audio_hal.period_size                           u:object_r:vendor_audio_prop:s0
 persist.audio.dualmic.config                    u:object_r:vendor_audio_prop:s0
-persist.vendor.dolby.loglevel                   u:object_r:vendor_dolby_loglevel_prop:s0
 
-# Google camera hal read only props
-ro.vendor.camera.                        u:object_r:camera_ro_prop:s0
-
-# Dirac
-persist.audio.dirac                           u:object_r:dirac_prop:s0
-
-# NFC
-persist.nfc.               u:object_r:persist_nfc_prop:s0
+ro.bluetooth.ftm_enabled             u:object_r:oppo_debug_prop:s0
+persist.env.fastdorm.enabled                  u:object_r:oppo_debug_prop:s0
+ro.data.large_tcp_window_size                  u:object_r:oppo_debug_prop:s0
+crypto.driver.load                  u:object_r:oppo_debug_prop:s0
+drmdiag.load                  u:object_r:oppo_debug_prop:s0
+init.svc.wpa_supplicant                  u:object_r:oppo_debug_prop:s0
+persist.ims.regmanager.mode                  u:object_r:oppo_debug_prop:s0
+oppo.wifirftest.enable                  u:object_r:oppo_debug_prop:s0
+persist.usb.hvdcp.detect                  u:object_r:oppo_debug_prop:s0
+ro.oppo.nw.singlecard                  u:object_r:oppo_debug_prop:s0
+ro.logdumpd.enabled                  u:object_r:oppo_debug_prop:s0
+oppo.eng.factory.no			u:object_r:oppo_debug_prop:s0

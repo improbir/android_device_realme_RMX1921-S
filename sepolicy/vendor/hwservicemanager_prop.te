@@ -1,1 +1,0 @@
-allow hwservicemanager_prop hwservicemanager_prop:file { getattr open };

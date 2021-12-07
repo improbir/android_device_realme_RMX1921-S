@@ -1,1 +1,0 @@
-allow sysfs_net sysfs_net:dir { search };

@@ -1,67 +1,28 @@
 allow init persist_file:lnk_file read;
-allow init socket_device:sock_file { create setattr };
+allow init socket_device:sock_file { create setattr unlink };
+allow init sysfs_battery_supply:file setattr; 
 allow init sysfs_oppo_display:file rw_file_perms;
 allow init sysfs_oppo_display:file setattr;
 allow init hwservicemanager:binder transfer;
 allow init hidl_base_hwservice:hwservice_manager add;
 allow init ion_device:chr_file { ioctl open read };
 allow init same_process_hal_file:file execute;
-allow init self:socket create;
-
 allow init proc_touchpanel:file { setattr getattr open read write };
-
-allow init socket_device:sock_file { unlink setattr create };
-
 allow init sysfs:file setattr;
 allow init bt_firmware_file:filesystem getattr;
 allow init firmware_file:filesystem getattr;
-
-allow init sysfs_vibrator:lnk_file read;
-
-# Allow init to wrtie to sysfs_battery_supply
-allow init sysfs_battery_supply:file { setattr };
-
-allow init vendor_data_file:file lock;
-allow init hal_audio_default:binder call;
-allow init platform_app:binder call;
-
-allow init sysfs_usb_supply:file setattr;
-allow init diag_device:chr_file { ioctl open read write };
-allow init self:socket { ioctl read write };
-allow init sensors_persist_file:file append;
-allow init sysfs_wake_lock:file { open read write };
-allow init self:capability2 block_suspend;
-
-allow init vendor_data_file:file lock;
-allow init hal_audio_default:binder call;
-allow init platform_app:binder call;
 allow init self:socket create;
 allow init oppo_debug_prop:file { read open getattr setattr };
 allow init oppo_debug_prop:property_service set;
-
-allow init self:netlink_route_socket rw_socket_perms;
-allow init self:rawip_socket create_socket_perms;
-
-allow init self:socket rw_socket_perms;
 allow init sysfs_usb_supply:file setattr;
-allow init oppo_debug_prop:property_service set;
-allow init default_prop:property_service set;
-allow init hal_sensors_hwservice:hwservice_manager { add find };
-allow init hal_thermal_hwservice:hwservice_manager { add find };
-allow init hwservicemanager:binder call;
-allow init netutils_wrapper_exec:file { execute execute_no_trans getattr open read };
-allow init self:netlink_route_socket { create nlmsg_read };
-allow init sysfs_wake_lock:file { open read write };
-allow init system_file:file execute_no_trans;
-allow init vendor_file:file execute_no_trans;
-allow init self:capability2 block_suspend;
-allow init hal_dpmQmiMgr:binder call;
-allow init self:capability2 wake_alarm;
+allow init sysfs_usb_supply:file rw_file_perms;
+set_prop(init, oppo_debug_prop)
 
-# KCal
-allow init sysfs_kcal:file w_file_perms;
-
-
+allow init netutils_wrapper_exec:file { execute read open getattr };
+allow init init:netlink_route_socket { read getattr };
+allow init apex_metadata_file:lnk_file read;
 allow init sysfs_battery_supply:file setattr;
 allow init adsprpcd_file:file mounton;
-
+allow init hwservicemanager:binder { call transfer };
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init proc:file { write };

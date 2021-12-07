@@ -8,18 +8,6 @@ type oppo_wlan_prop, property_type;
 
 # Camera
 type vendor_camera_prop, property_type;
-type camera_ro_prop, property_type;
-
-# Dolby
-type vendor_dolby_loglevel_prop, property_type;
-
-# Dirac
-type dirac_prop, property_type;
-
-# NFC
-type persist_nfc_prop, property_type;
-type vendor_nfc_prop, property_type;
 
 # Thermal
 type vendor_thermal_prop, property_type;
-
