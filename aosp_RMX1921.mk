@@ -37,7 +37,3 @@ TARGET_SUPPORTS_GOOGLE_RECORDER := false
 TARGET_INCLUDE_STOCK_ACORE := false
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 
-# Elixir Maintainer Stuff
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.elixir.maintainer=Probir \
-    ro.elixir.version=1.0
