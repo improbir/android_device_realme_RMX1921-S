@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit some common stuff
+# Inherit some common PE stuff
 TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 1080
 
@@ -29,11 +29,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
         PRIVATE_BUILD_DESC="redfin-user 12 SQ1A.211205.008 7888514 release-keys" \
         PRODUCT_NAME="RMX1921" \
 	TARGET_DEVICE="RMX1921"
-    
-# Elixir official
-IS_PHONE := true
-CUSTOM_BUILD_TYPE=OFFICIAL
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
-TARGET_INCLUDE_STOCK_ACORE := false
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
-Elixir_MAINTAINER := Probir
+
