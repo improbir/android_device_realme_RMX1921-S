@@ -1477,18 +1477,6 @@ on boot
     chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
     chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
 
-# Vibrator permissions
-  chown system system /sys/class/leds/vibrator/vmax_mv
-  chmod 0660 /sys/class/leds/vibrator/vmax_mv
-
-# Audio gain permissions
-  chown system system /sys/kernel/sound_control/headphone_gain
-  chown system system /sys/kernel/sound_control/mic_gain
-  chown system system /sys/kernel/sound_control/earpiece_gain
-  chmod 0660 /sys/kernel/sound_control/headphone_gain
-  chmod 0660 /sys/kernel/sound_control/mic_gain
-  chmod 0660 /sys/kernel/sound_control/earpiece_gain
-
 # Disable NFC for RMX1921
 on boot && property:ro.boot.product.hardware.sku=RMX1921
     stop vendor.nfc_hal_service
