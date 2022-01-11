@@ -725,6 +725,9 @@ vendor/lib64/liblowi_wifihal.so
 vendor/lib64/libqdma_file_agent.so
 vendor/lib64/libslimclient.so
 vendor/lib64/libxtadapter.so
+vendor/lib64/libcdfw_remote_api.so
+vendor/lib64/libqcc_file_agent.so
+vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 vendor/lib64/vendor.qti.gnss@1.0.so
 vendor/lib64/vendor.qti.gnss@1.1.so
 vendor/lib64/vendor.qti.gnss@1.2.so
@@ -758,6 +761,9 @@ vendor/lib/liblowi_wifihal.so
 vendor/lib/libminksocket.so
 vendor/lib/libslimclient.so
 vendor/lib/libxtadapter.so
+vendor/lib/libcdfw_remote_api.so
+vendor/lib/libqcc_file_agent.so
+vendor/lib/vendor.qti.hardware.qccsyshal@1.0.so
 vendor/lib/vendor.qti.gnss@1.0.so
 vendor/lib/vendor.qti.gnss@1.1.so
 vendor/lib/vendor.qti.gnss@1.2.so
