@@ -698,7 +698,6 @@ vendor/firmware/goodixfp.b07|1b33a3c20ea4898ba3d4d9b6e85e75818ffb2e84
 vendor/bin/hw/android.hardware.gnss@2.0-service-qti
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
-vendor/bin/mlid
 vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
@@ -730,7 +729,6 @@ vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_core.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
-vendor/lib64/libminksocket.so
 vendor/lib64/libqdma_file_agent.so
 vendor/lib64/libslimclient.so
 vendor/lib64/libxtadapter.so
