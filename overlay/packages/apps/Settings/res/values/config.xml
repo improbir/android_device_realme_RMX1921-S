@@ -27,4 +27,10 @@ name="config_customDozePackage">org.lineageos.settings/org.lineageos.settings.do
 
     <!-- Whether to show the Preference for Adaptive connectivity -->
     <bool name="config_show_adaptive_connectivity">false</bool>
+
+    <!-- Battery Health -->
+    <string name="config_batteryChargeCycles">/sys/class/power_supply/battery/cycle_count</string>
+    <string name="config_batteryDesignCapacity">/sys/class/power_supply/battery/charge_full</string>
+    <string name="config_batteryCalculatedCapacity">/sys/class/power_supply/battery/charge_now</string>
+    <bool name="config_supportBatteryHealth">true</bool>
 </resources>
