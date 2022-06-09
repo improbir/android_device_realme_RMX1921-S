@@ -143,10 +143,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.add_power_save=1 \
     persist.vendor.radio.mt_sms_ack=30
 
-# Misc tweaks
-PRODUCT_PROPERTY_OVERRIDES += \
-    pm.sleep_mode=1
-
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
