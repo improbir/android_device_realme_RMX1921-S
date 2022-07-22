@@ -104,7 +104,7 @@ on post-fs-data
 on boot
 #ifndef VENDOR_EDIT
 #Guqcai@psw.bsp.tp 2018/03/12 del for closing hbtp
-#    chown system system /sys/kernel/hbtp/display_pwr
+    chown system system /sys/kernel/hbtp/display_pwr
 #endif
     start rmt_storage
     start rfs_access
