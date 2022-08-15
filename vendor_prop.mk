@@ -125,6 +125,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=0 \
     debug.sf.hw=1 \
+    debug.hwui.use_buffer_age=false \
     ro.opengles.version=196610 \
     debug.renderengine.backend=skiaglthreaded \
     ro.hardware.egl=adreno \
