@@ -16,7 +16,7 @@ TARGET_INCLUDE_WIFI_EXT := true
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Pixel Launcher 
-$(call inherit-product, vendor/PixelLauncher/PixelLauncher.mk)
+#$(call inherit-product, vendor/PixelLauncher/PixelLauncher.mk)
 
 PRODUCT_BRAND := Realme
 PRODUCT_DEVICE := RMX1921
