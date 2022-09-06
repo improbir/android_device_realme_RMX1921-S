@@ -92,7 +92,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
    persist.camera.HAL3.enabled=1 \
-   persist.vendor.camera.is_type=4
+   persist.vendor.camera.is_type=4 \
+   persist.vendor.camera.eis.enable=1 
 
 # Codec2
 PRODUCT_PROPERTY_OVERRIDES += \
