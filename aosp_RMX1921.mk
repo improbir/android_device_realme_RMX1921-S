@@ -8,7 +8,7 @@
 TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 1080
 
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common.mk)
 
 TARGET_INCLUDE_WIFI_EXT := true
 
@@ -33,12 +33,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
         PRODUCT_NAME="RMX1921" \
 	TARGET_DEVICE="RMX1921"
     
-# Elixir official
-IS_PHONE := true
-ELIXIR_MAINTAINER := Probir
-ELIXIR_BUILD_TYPE := OFFICIAL
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
-TARGET_INCLUDE_STOCK_ACORE := false
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_SUPPORTS_QUICK_TAP := true
-EXTRA_UDFPS_ANIMATIONS := true
