@@ -8,7 +8,8 @@
 TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 1080
 
-$(call inherit-product, vendor/aosp/config/common.mk)
+# Inherit some common SparkOS stuff.
+$(call inherit-product, vendor/spark/config/common_full_phone.mk)
 
 TARGET_INCLUDE_WIFI_EXT := true
 
@@ -21,7 +22,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := Realme
 PRODUCT_DEVICE := RMX1921
 PRODUCT_MANUFACTURER := Realme
-PRODUCT_NAME := aosp_RMX1921
+PRODUCT_NAME := spark_RMX1921
 PRODUCT_MODEL := Realme XT
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
