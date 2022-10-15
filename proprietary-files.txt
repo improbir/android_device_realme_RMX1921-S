@@ -1503,8 +1503,9 @@ vendor/firmware/tp/19651/FW_S3706_SAMSUNG.img
 vendor/firmware/tp/19651/FW_S3706_SAMSUNG_FAE.img
 vendor/firmware/tp/19651/LIMIT_S3706_SAMSUNG.img
 
-# Thermal engine from PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_100-release-keys
+# Thermal blobs from alioth qssi-user-12-SKQ1.211006.001-V13.1.22.10.11.DEV-release-keys
 vendor/bin/thermal-engine
+vendor/etc/init/init_thermal-engine.rc
 vendor/lib64/libthermalclient.so
 vendor/lib/libthermalclient.so
 
