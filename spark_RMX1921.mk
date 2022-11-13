@@ -27,10 +27,10 @@ PRODUCT_MODEL := Realme XT
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
 
-BUILD_FINGERPRINT := "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys"
+BUILD_FINGERPRINT := "google/raven/raven:13/TP1A.221105.002/9080065:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRIVATE_BUILD_DESC="raven-user 13 TP1A.221005.002 9012097 release-keys" \
+        PRIVATE_BUILD_DESC="raven-user 13 TP1A.221105.002 9080065 release-keys" \
         PRODUCT_NAME="RMX1921" \
 	TARGET_DEVICE="RMX1921"
     
