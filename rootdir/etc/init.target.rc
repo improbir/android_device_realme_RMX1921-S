@@ -118,6 +118,7 @@ on boot
     write /dev/cpuset/background/cpus 0-3
     #endif /*VENDOR_EDIT*/
     write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/audio-app/cpus 1-2
 
     # set default schedTune value for camera-daemon
     write /dev/stune/camera-daemon/schedtune.prefer_idle 1
