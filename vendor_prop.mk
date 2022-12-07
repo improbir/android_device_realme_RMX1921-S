@@ -194,3 +194,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Zygote
 PRODUCT_PROPERTY_OVERRIDES += \
     zygote.critical_window.minute=10
+
+# Cached app compaction
+    persist.device_config.activity_manager.use_compaction=true
